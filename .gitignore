@@ -1,0 +1,7 @@
+
+vendor/coffeecode/router/
+vendor/league/plates/
+vendor/phpmailer/phpmailer/
+vendor/symfony/deprecation-contracts/
+vendor/symfony/polyfill-mbstring/
+vendor/symfony/var-dumper/
