@@ -98,7 +98,7 @@ class Login {
             setSessions(["id" => $id, "usuario" => $dados['usuario'], "token" => $dados['token'], "avatar" => $dados['avatar']]);
             $token = new TokenUser(getSession("id"));
             $token->token();
-            redirect(routerConfig()."/usuario/perfil/{$dados['token']}");
+            redirect(routerConfig()."/perfil/{$dados['token']}");
         }
     }
     

@@ -71,7 +71,7 @@ if($dados['tema'] == 'Dark'){
                 <p class="mb-0">Nome</p>
               </div>
               <div class="col-sm-9">
-                <p class=" mb-0"><?=$dados['nome']?></p>
+                <p class=" mb-0"></p>
               </div>
             </div>
             <hr>
@@ -80,7 +80,7 @@ if($dados['tema'] == 'Dark'){
                 <p class="mb-0">Email</p>
               </div>
               <div class="col-sm-9">
-                <p class=" mb-0"><?=$dados['email']?></p>
+                <p class=" mb-0"></p>
               </div>
             </div>
             <hr>
@@ -89,7 +89,7 @@ if($dados['tema'] == 'Dark'){
                 <p class="mb-0">Celular 1</p>
               </div>
               <div class="col-sm-9">
-                <p class=" mb-0"><?=$dados['celular 1']?></p>
+                <p class=" mb-0"></p>
               </div>
             </div>
             <hr>
@@ -98,7 +98,7 @@ if($dados['tema'] == 'Dark'){
                 <p class="mb-0">Celular 2</p>
               </div>
               <div class="col-sm-9">
-                <p class=" mb-0"><?=$dados['celular 2']?></p>
+                <p class=" mb-0"></p>
               </div>
             </div>
             <hr>
@@ -107,7 +107,7 @@ if($dados['tema'] == 'Dark'){
                 <p class="mb-0">Token de segurança</p>
               </div>
               <div class="col-sm-9">
-                <p class=" mb-0"><?=$dados['token']?></p>
+                <p class=" mb-0"></p>
               </div>
             </div>
           </div>

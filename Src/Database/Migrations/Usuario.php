@@ -14,12 +14,12 @@ namespace Src\Database\Migrations;
         return "{$this->variable} usuario";
     }
 
-    public function peopleTable(){
+    /*public function peopleTable(){
        return "{$this->variable} pessoa"; 
     }
 
     public function twoFactTable(){
       return "{$this->variable} codigoDoisFatores";
-    }
+    }*/
 
 }

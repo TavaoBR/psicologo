@@ -18,6 +18,7 @@ $temaColor = configTemaColor();
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <!-- Vendor CSS Files -->
     <link href="<?=Libs("assets/vendor/bootstrap/css/bootstrap.min.css")?> " rel="stylesheet">
     <link href="<?=Libs("assets/vendor/bootstrap-icons/bootstrap-icons.css")?>" rel="stylesheet">
@@ -41,7 +42,7 @@ $temaColor = configTemaColor();
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="" alt="">
-        <span class="d-none d-lg-block">Project</span>
+        <span class="d-none d-lg-block">Projeto Psicologo</span>
       </a>
       <i class='bx bx-transfer toggle-sidebar-btn'></i>
     </div><!-- End Logo -->
@@ -306,25 +307,25 @@ $temaColor = configTemaColor();
       </li><!-- End Charts Nav -->
 
 
-      <!--<li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#empresa" data-bs-toggle="collapse" href="#">
-        <i class='bx bx-buildings'></i><span>Empresa</span><i class="bx bx-chevron-down ms-auto"></i>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#paciente" data-bs-toggle="collapse" href="#">
+        <i class='bx bxs-user-badge'></i><span>Paciente</span><i class="bx bx-chevron-down ms-auto"></i>
         </a>
-        <ul id="empresa" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="paciente" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="charts-chartjs.html">
-              <i class="bx bx-circle"></i><span>Cadastrar sua empresa</span>
+            <a href="<?=routerConfig()?>/pacientes/cadastrar">
+              <i class="bx bx-circle"></i><span>Cadastrar</span>
             </a>
           </li>
           <li>
-            <a href="charts-apexcharts.html">
-              <i class="bx bx-circle"></i><span>Entra na empresa</span>
+            <a href="#">
+              <i class="bx bx-circle"></i><span>Pacientes</span>
             </a>
           </li>
 
 
         </ul>
-      </li>-->
+      </li>
 
 
       <li class="nav-item">

@@ -1,7 +1,7 @@
 <?php 
 
 function LinkCdn(){
-    $link = "http://localhost/the-project/Public/";
+    $link = "http://localhost/psicologo/Public/";
     return $link;
  }
  
@@ -16,7 +16,7 @@ function LinkCdn(){
 
  function routerConfig()
 {
-    $rota = "http://localhost/the-project";
+    $rota = "http://localhost/psicologo";
     return $rota;
 }
 

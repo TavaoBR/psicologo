@@ -30,7 +30,7 @@ abstract class ConfigDatabase {
 
     protected function dbname()
     {
-        $dbname = "workTest";
+        $dbname = "psicologo";
         return $dbname;
     }
 
