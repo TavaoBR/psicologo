@@ -3,13 +3,14 @@
 function validateUser(){
     if(!getSession("id") && !getSession("token")){
      setSession("Mensagem", sweetAlertError("Acesso Restrito"));
-     redirect(routerConfig()."/usuario/login");
+     redirect(routerConfig()."/login");
      exit();
     }
  }
 
  function configTemaColor(){
-   
+    session_start();
+    validateUser();
     $read = new \Src\Model\Usuario\Read;
 
     $data = $read->userId(getSession("id"));

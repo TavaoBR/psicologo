@@ -31,6 +31,14 @@ $temaColor = configTemaColor();
                                         
                                             <div>
                                                 <div class="row">
+
+                                                <div class="col-lg-4">
+                                                        <div class="mb-3">
+                                                            <label class="form-label elemento" for="billing-email-address">Cpf</label>
+                                                            <input type="text" name="cpf" id="cpf" class="form-control" value="<?=validateSession("cpf")?>">
+                                                        </div>
+                                                </div>
+
                                                     <div class="col-lg-4">
                                                         <div class="mb-3">
                                                             <label class="form-label" for="billing-name">Nome Completo</label>
@@ -47,7 +55,7 @@ $temaColor = configTemaColor();
                                                     <div class="col-lg-4">
                                                         <div class="mb-3">
                                                             <label class="form-label" for="billing-phone">Idade</label>
-                                                            <input type="number" class="form-control" id="idade" value="0" name="idade">
+                                                            <input type="number" class="form-control" id="idade" value="<?=validateSession("idade")?>" name="idade">
                                                         </div>
                                                     </div>
 
@@ -147,6 +155,7 @@ $temaColor = configTemaColor();
 <?=validateSession("CadastroPaciente")?>
 
 <script>
+            $('#cpf').mask("999.999.999-99");
             $('#cep').mask("99999-999");
             $('#celular').mask("9999999-9999");
 

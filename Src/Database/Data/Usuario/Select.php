@@ -45,10 +45,6 @@ class Select {
         $select = "SELECT * FROM {$this->migration->userTable()}";
     }
 
-    public function codigoDoisFatores(int $fk, int $status){
-         $select = "{$this->migration->twoFactTable()} WHERE fk = :fk AND status = :status ";
-         $query = $this->db->getConnection()->prepare($select);
-    }
 
 
 
