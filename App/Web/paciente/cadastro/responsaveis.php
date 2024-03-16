@@ -35,20 +35,9 @@ if($temaColor == 'Dark'){
       <div class="col-lg-8">
         <div class="card mb-4" style="<?=$style?>" >
           <div class="card-body">
-            <div class="row">
+          <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Nome</p>
-              </div>
-              <div class="col-sm-9">
-                <p class=" mb-0">
-                  <input type="text" class="form-control" id="nome" style="border:none" name="nome" required>
-                </p>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Responsavel</p>
+                <p class="mb-0">Grau Responsavel</p>
               </div>
               <div class="col-sm-9">
                 <p class=" mb-0">
@@ -66,7 +55,18 @@ if($temaColor == 'Dark'){
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Celular</p>
+                <p class="mb-0">Nome responsavel</p>
+              </div>
+              <div class="col-sm-9">
+                <p class=" mb-0">
+                  <input type="text" class="form-control" id="nome" style="border:none" name="nome" required>
+                </p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Celular Responsavel</p>
               </div>
               <div class="col-sm-9">
                 <p class=" mb-0">

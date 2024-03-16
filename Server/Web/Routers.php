@@ -18,6 +18,7 @@ class Routers extends Start{
       $router->get("/cadastrar", "PacienteController:cadastrar");
       $router->get("/cadastrar/avatar/{id}", "PacienteController:cadastrarAvatar");
       $router->get("/cadastrar/responsaveis/{id}", "PacienteController:cadastrarResponsaveis");
+      $router->get("/cadastrar/anamnese/{id}", "PacienteController:cadastrarAnamnese");
 
       $router->group("oops")->namespace("App\Controller\Error");
       $router->get("/{errocode}", "ErrorController:notFound");

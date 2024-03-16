@@ -70,7 +70,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js" integrity="sha512-dQIiHSl2hr3NWKKLycPndtpbh5iaHLo6MwrXm7F0FM5e+kL2U16oE9uIwPHUl6fQBeCthiEuV/rzP3MiAB8Vfw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-webcam/1.0.0/jquery.webcam.min.js" integrity="sha512-bTfNSUABHISn7mcOc9mM5xDipX1v7qcfilknueD19cxJ0gTO2/Y2iIByraL01gzsHarb5jyzbgKplvYPAXhnmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="/view/asset/plugin/sweetalert/sweetalert.min.js"></script>
 
 <script>
     $(document).ready(function() {

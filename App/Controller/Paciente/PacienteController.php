@@ -29,8 +29,10 @@ class PacienteController extends  TemplateConfig{
         $this->view("paciente/cadastro/responsaveis", ["title" => "Cadastrar Paciente", "conta" => $dados[0], "data" => $dados[1]]);
     }
 
-    public function cadastrarAnammese($data){
-
+    public function cadastrarAnamnese($data){
+        session_start();
+        $dados = $this->read->PacienteId($data['id']);
+        $this->view("paciente/cadastro/anamnese", ["title" => "Cadastrar Dados Anamnese","conta" => $dados[0], "data" => $dados[1]]);
     }
 
     public function pacientes(){
