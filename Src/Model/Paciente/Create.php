@@ -16,6 +16,11 @@ class Create {
        return $insert;
     }
 
+    public function createResponsavel(int $id, string $nome, string $responsavel, string $celular){
+      $insert = $this->insert->inserirResponsavel($id, $nome, $responsavel, $celular);
+      return $insert;
+    }
+
 
 
 

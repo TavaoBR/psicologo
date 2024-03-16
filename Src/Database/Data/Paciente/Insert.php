@@ -14,6 +14,7 @@ class Insert{
     }
 
     public function inserirPaciente(string $cpf, string $nome, string $data, string $idade, string $cep, string $uf, string $cidade, string $bairro, string $endereco, string $celular, string $email){
+          
           $insert = "{$this->migration->pacienteTable()} (cpf, nome, dataNasc, idade, cep, estado, cidade, bairro, endereco, celular, email) 
           VALUES (:cpf, :nome, :data, :idade, :cep, :estado, :cidade, :bairro, :endereco, :celular, :email)";
           $query = $this->db->getConnection()->prepare($insert);
@@ -31,5 +32,20 @@ class Insert{
           $query->execute();
           return $query->rowCount();
     }
+
+
+    public function inserirResponsavel(int $id, string $nome, string $responsavel, string $celular){
+       
+       $insert = "{$this->migration->responsavelTable()} (fk, responsavel, nome, celular) 
+       VALUES (:fk, :responsavel, :nome, :celular)";
+       $query = $this->db->getConnection()->prepare($insert);
+       $query->bindParam(":fk", $id);
+       $query->bindParam(":responsavel", $responsavel);
+       $query->bindParam(":nome", $nome);
+       $query->bindParam(":celular", $celular);
+       $query->execute();
+       return $query->rowCount();
+
+    } 
 
 }

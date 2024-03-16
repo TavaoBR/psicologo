@@ -39,6 +39,7 @@ class Routers extends Start{
       $router->group("pacientes")->namespace("Src\Response\Paciente");
       $router->post("/cadastrar", "Cadastrar:data");
       $router->post("/cadastrar/tirar/foto/avatar/{id}","Avatar:tirarFoto");
+      $router->post("/cadastrar/responsaveis/{id}", "CadastrarResponsavel:result");
 
       $router->group("oops")->namespace("App\Controllers\Error");
       $router->get("/{errocode}", "ErrorController:notFound");

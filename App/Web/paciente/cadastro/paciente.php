@@ -157,7 +157,7 @@ $temaColor = configTemaColor();
 <script>
             $('#cpf').mask("999.999.999-99");
             $('#cep').mask("99999-999");
-            $('#celular').mask("9999999-9999");
+            $('#celular').mask("(99) 9 9999-9999");
 
             $(document).ready(function () {
             $("#cep").blur(function () {

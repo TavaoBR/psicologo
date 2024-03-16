@@ -14,6 +14,10 @@ class Paciente {
         return "{$this->variTable} paciente";
     }
 
+    public function responsavelTable(){
+      return "{$this->variTable} responsaveis"; 
+    }
+
     
 
 
