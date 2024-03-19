@@ -18,6 +18,10 @@ class Paciente {
       return "{$this->variTable} responsaveis"; 
     }
 
+    public function anamneseTable(){
+      return "{$this->variTable} anamnese";
+    }
+
     
 
 

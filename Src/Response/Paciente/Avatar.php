@@ -2,8 +2,9 @@
 
 namespace Src\Response\Paciente;
 use Src\Model\Paciente\Update;
+use Src\Services\VariaveisForm;
 
-class Avatar {
+class Avatar extends VariaveisForm{
 
     private $update;
 
@@ -13,7 +14,7 @@ class Avatar {
 
     public function tirarFoto($data){
         $id = $data['id'];
-        $file = $_POST['photoStore'];
+        $file = $this->POST('photoStore');
         $imagemName = uniqid().".png";
         $this->update->attAvatar($id, $imagemName);
         $_UP['pasta'] = 'Public/assets/img/paciente/'.$id.'/';

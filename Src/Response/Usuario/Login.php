@@ -6,8 +6,9 @@ use Src\Model\Usuario\Read;
 use Src\Model\Usuario\Update;
 use Src\Services\Mail;
 use Src\Services\TokenUser;
+use Src\Services\VariaveisForm;
 
-class Login {
+class Login extends VariaveisForm{
 
     private string $user;
     private string $password;
@@ -16,8 +17,8 @@ class Login {
     //private $mail;
 
     public function __construct(){
-        $this->user = $_POST['user'];
-        $this->password = $_POST['password'];
+        $this->user = $this->POST('user');
+        $this->password = $this->POST('password');
         $this->userRead = new Read;
         $this->userUpdate = new Update;
         //$this->mail = new Mail;

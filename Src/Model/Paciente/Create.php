@@ -21,6 +21,11 @@ class Create {
       return $insert;
     }
 
+    public function createAnamnese(int $id, string $motivo, string $historico, string $impacto, string $infancia, string $expectativas){
+       $insert = $this->insert->inserirAnamnese($id, $motivo, $historico, $impacto, $infancia, $expectativas);
+       return $insert;
+    }
+
 
 
 

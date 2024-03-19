@@ -1,7 +1,8 @@
 <?php 
 
 namespace Src\Response\Paciente;
-class Cadastrar {
+use Src\Services\VariaveisForm;
+class Cadastrar extends VariaveisForm{
 
     private string $cpf;
     private string $nome;
@@ -16,17 +17,17 @@ class Cadastrar {
     private string $endereco;
 
     public function __construct(){
-       $this->cpf = $_POST['cpf'];
-       $this->nome = $_POST['nome'];
-       $this->dataNasc = $_POST['dataNasc'];
-       $this->idade = $_POST['idade'];
-       $this->email = $_POST['email'];
-       $this->celular = $_POST['celular'];
-       $this->cep = $_POST['cep'];
-       $this->estado = $_POST['uf'];
-       $this->cidade = $_POST['cidade'];
-       $this->bairro = $_POST['bairro'];
-       $this->endereco = $_POST['endereco'];    
+       $this->cpf = $this->POST('cpf');
+       $this->nome = $this->POST('nome');
+       $this->dataNasc = $this->POST('dataNasc');
+       $this->idade = $this->POST('idade');
+       $this->email = $this->POST('email');
+       $this->celular = $this->POST('celular');
+       $this->cep = $this->POST('cep');
+       $this->estado = $this->POST('uf');
+       $this->cidade = $this->POST('cidade');
+       $this->bairro = $this->POST('bairro');
+       $this->endereco = $this->POST('endereco');    
     } 
 
     public function data(){

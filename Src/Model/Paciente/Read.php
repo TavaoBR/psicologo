@@ -20,5 +20,9 @@ class Read {
       $select = $this->select->pacienteId($id);
       return array($select[0], $select[1]);
     } 
-
+    
+    public function fichaAnamnese(int $fk){
+      $select = $this->select->fichaAnamnesePaciente($fk);
+      return array($select[0], $select[1]);
+    }  
 }

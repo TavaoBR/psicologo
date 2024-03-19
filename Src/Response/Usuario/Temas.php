@@ -2,8 +2,9 @@
 
 namespace Src\Response\Usuario;
 use Src\Model\Usuario\Update;
+use Src\Services\VariaveisForm;
 
-class Temas {
+class Temas extends VariaveisForm{
     private $userUpdate;
 
     public function __construct(){
@@ -13,7 +14,7 @@ class Temas {
     public function TemaColor($data){
        
         $id = $data['id'];
-        $tema = $_POST['tema'];
+        $tema = $this->POST('tema');
          
         $update = $this->userUpdate->temaColor($id, $tema);
 

@@ -2,8 +2,9 @@
 
 namespace Src\Response\Paciente;
 use Src\Model\Paciente\Create;
+use Src\Services\VariaveisForm;
 
-class CadastrarResponsavel {
+class CadastrarResponsavel extends VariaveisForm{
 
     private string $nome;
     private string $responsavel;
@@ -12,9 +13,9 @@ class CadastrarResponsavel {
 
     public function __construct(){
 
-        $this->nome = $_POST['nome'];
-        $this->responsavel= $_POST['responsavel'];
-        $this->celular = $_POST['celular'];
+        $this->nome = $this->POST('nome');
+        $this->responsavel= $this->POST('responsavel');
+        $this->celular = $this->POST('celular');
         $this->create = new Create;
     }
 

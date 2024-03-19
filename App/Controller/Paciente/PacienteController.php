@@ -44,4 +44,9 @@ class PacienteController extends  TemplateConfig{
         session_start();
     }
 
+    public function sessaoStart($data){
+        session_start();
+        $this->view("paciente/sessao/start", ["title" => "Inicar Sessao"]);
+    }
+
 }

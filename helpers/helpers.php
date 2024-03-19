@@ -40,8 +40,14 @@ function messageError(string $message, string $id = null){
    return $alerta;
 }
 
-function messageWarning(string $message, string $id = null){
-    $alerta = "<p class='alert alert-warning' id='{$id}'>{$message}</p>";
+function messageWarning(string $message){
+    $alerta = "
+     <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+     <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+     {$message}
+     </div>
+
+   ";
     return $alerta;
 }
 

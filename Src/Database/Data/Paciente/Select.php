@@ -30,4 +30,13 @@ class Select {
         $data = array($query->rowCount(), $query->fetch(\PDO::FETCH_ASSOC));
         return $data;
     }
+
+    public function fichaAnamnesePaciente(int $fk){
+       $select = "{$this->migration->anamneseTable()} WHERE fk = :fk";
+       $query = $this->db->getConnection()->prepare($select);
+       $query->bindParam(":fk", $fk);
+       $query->execute();
+       $data = array($query->rowCount(), $query->fetch(\PDO::FETCH_ASSOC));
+       return $data;
+    }
 }

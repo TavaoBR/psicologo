@@ -9,7 +9,9 @@
 
     <div class="row">
 
-    <form method="post" action="#">
+    <?=validateSession("CadastroAnamnese")?>
+
+    <form  action="<?=routerConfig()?>/pacientes/cadastrar/anamnese/<?=$data['id']?>" method="POST"> 
         <div class="col-xl-12">
 
             <div class="card">
@@ -32,35 +34,35 @@
                                                 <div class="col-lg-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="billing-address">MOTIVO DA CONSULTA</label>
-                                                        <textarea class="form-control"  rows="5" ></textarea>
+                                                        <textarea class="form-control" name="motivo" rows="5" ><?=validateSession("Motivo")?></textarea>
                                                     </div>
                                                     </div>
 
                                                 <div class="col-lg-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="billing-address">HISTORICO DO PRO</label>
-                                                        <textarea class="form-control"  rows="5" ></textarea>
+                                                        <textarea class="form-control" name="historico"  rows="5" ><?=validateSession("Historico")?></textarea>
                                                     </div>
                                                 </div>
 
                                                     <div class="col-lg-12">
                                                     <div class="mb-3">
-                                                        <label class="form-label" for="billing-address">IMPACTO BIOGRAFICOs</label>
-                                                        <textarea class="form-control"  rows="5" ></textarea>
+                                                        <label class="form-label" for="billing-address">IMPACTO BIOGRAFICO</label>
+                                                        <textarea class="form-control" name="impacto" rows="5" ><?=validateSession("Impacto")?></textarea>
                                                     </div>
                                                     </div>
 
                                                     <div class="col-lg-12">
                                                     <div class="mb-3">
-                                                        <label class="form-label" for="billing-address">INFANCIA</label>
-                                                        <textarea class="form-control"  rows="5" ></textarea>
+                                                        <label class="form-label" for="billing-address">INFÂNCIA</label>
+                                                        <textarea class="form-control" name="infancia" rows="5" ><?=validateSession("Infância")?></textarea>
                                                     </div>
                                                     </div>
 
                                                     <div class="col-lg-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="billing-address">EXPECTATIVAS</label>
-                                                        <textarea class="form-control"  rows="5" ></textarea>
+                                                        <textarea class="form-control" name="expectativas" rows="5" ><?=validateSession("Expectativas")?></textarea>
                                                     </div>
                                                     </div>
 
@@ -89,4 +91,17 @@
     
 </div>
 </section>
+
+
+
+<script>
+    function bloquear(){
+      var botao = document.getElementById("bloquearBotao");
+      botao.disabled = true;
+      
+      setTimeout(function() {
+        botao.form.submit();
+      }, 100);
+    }
+</script>
 

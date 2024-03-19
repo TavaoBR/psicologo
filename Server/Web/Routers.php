@@ -19,6 +19,7 @@ class Routers extends Start{
       $router->get("/cadastrar/avatar/{id}", "PacienteController:cadastrarAvatar");
       $router->get("/cadastrar/responsaveis/{id}", "PacienteController:cadastrarResponsaveis");
       $router->get("/cadastrar/anamnese/{id}", "PacienteController:cadastrarAnamnese");
+      $router->get("/sessao/iniciar/{id}", "PacienteController:sessaoStart");
 
       $router->group("oops")->namespace("App\Controller\Error");
       $router->get("/{errocode}", "ErrorController:notFound");
@@ -41,6 +42,7 @@ class Routers extends Start{
       $router->post("/cadastrar", "Cadastrar:data");
       $router->post("/cadastrar/tirar/foto/avatar/{id}","Avatar:tirarFoto");
       $router->post("/cadastrar/responsaveis/{id}", "CadastrarResponsavel:result");
+      $router->post("/cadastrar/anamnese/{id}", "CadastrarAnamnese:result");
 
       $router->group("oops")->namespace("App\Controllers\Error");
       $router->get("/{errocode}", "ErrorController:notFound");

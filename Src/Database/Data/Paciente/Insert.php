@@ -45,7 +45,20 @@ class Insert{
        $query->bindParam(":celular", $celular);
        $query->execute();
        return $query->rowCount();
-
     } 
+
+    public function inserirAnamnese(int $id, string $motivo, string $historico, string $impacto, string $infancia, string $expectativas){
+      $insert = "{$this->migration->anamneseTable()} (fk, motivo, historico, impacto, infancia, expectativas) 
+      VALUES (:fk, :motivo, :historico ,:impacto, :infancia, :expectativas)";
+      $query = $this->db->getConnection()->prepare($insert);
+      $query->bindParam(":fk", $id);
+      $query->bindParam(":motivo", $motivo);
+      $query->bindParam(":historico", $historico);
+      $query->bindParam(":impacto", $impacto);
+      $query->bindParam(":infancia", $infancia);
+      $query->bindParam(":expectativas", $expectativas);
+      $query->execute();
+      return $query->rowCount();
+    }
 
 }
