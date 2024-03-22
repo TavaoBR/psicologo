@@ -61,4 +61,14 @@ class Insert{
       return $query->rowCount();
     }
 
+    public function inserirSessao(int $fk, string $data){
+       $insert = "{$this->migration->sessaoTable()} (fk, data) 
+       VALUES(:fk, :data)";
+       $query = $this->db->getConnection()->prepare($insert);
+       $query->bindParam(":fk", $fk);
+       $query->bindParam(":data", $data);
+       $query->execute();
+       return $query->rowCount();
+    }
+
 }

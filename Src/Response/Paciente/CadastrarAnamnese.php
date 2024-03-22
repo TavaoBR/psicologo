@@ -98,7 +98,7 @@ class CadastrarAnamnese extends VariaveisForm{
 
     private function inserirFicha(int $fk){
         if($this->create->createAnamnese($fk, $this->motivo, $this->historico, $this->impacto, $this->infancia, $this->expectativas) > 0){
-          redirect(routerConfig()."/pacientes/sessao/iniciar/$fk");
+          redirect(routerConfig()."/pacientes/sessao/criar/$fk");
         }else{
             setSessions(["CadastroAnamnese" => sweetAlertError("Erro ao inserir Ficha, tente novamente, caso continue o erro, entre em contato com desenvolvedor"), 
             "Motivo" => $this->motivo,

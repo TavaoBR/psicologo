@@ -20,4 +20,16 @@ class Update {
        $query->bindParam(":id", $id);
        $query->execute();
     }
+
+    public function atualizarSessao(int $id, string $anotacao, string $horaInicial, string $horaFinal, string $cronometro){
+      $update = "{$this->migration->sessaoTable()} SET horaInicio = :inicio, horaFinal = :final, cronometro = :cronometro, anotacao = :anotacao WHERE id = :id";
+      $query = $this->db->getConnection()->prepare($update);
+      $query->bindParam(":id", $id);
+      $query->bindParam(":inicio", $horaInicial);
+      $query->bindParam(":final", $horaFinal);
+      $query->bindParam(":cronometro", $cronometro);
+      $query->bindParam(":anotacao", $anotacao);
+      $query->execute();
+      return $query->rowCount();
+    }
 }

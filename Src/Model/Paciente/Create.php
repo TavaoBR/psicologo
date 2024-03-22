@@ -25,7 +25,11 @@ class Create {
        $insert = $this->insert->inserirAnamnese($id, $motivo, $historico, $impacto, $infancia, $expectativas);
        return $insert;
     }
-
+     
+    public function createSessao(int $fk, string $data){
+        $insert = $this->insert->inserirSessao($fk, $data);
+        return $insert;
+    }
 
 
 

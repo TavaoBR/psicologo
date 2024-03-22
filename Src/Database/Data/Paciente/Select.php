@@ -13,6 +13,14 @@ class Select {
         $this->migration = new Paciente("SELECT * FROM");
     }
 
+    public function pacientes(){
+        $select = "{$this->migration->pacienteTable()} ORDER BY nome ASC";
+        $query = $this->db->getConnection()->prepare($select);
+        $query->execute();
+        $data = array($query->rowCount(), $query->fetchAll());
+        return $data;
+    }
+
     public function pacienteCpf(string $cpf){
         $select = "{$this->migration->pacienteTable()} WHERE cpf = :cpf";
         $query = $this->db->getConnection()->prepare($select);
@@ -38,5 +46,41 @@ class Select {
        $query->execute();
        $data = array($query->rowCount(), $query->fetch(\PDO::FETCH_ASSOC));
        return $data;
+    }
+
+    public function ultimaSessaoPaciente(int $fk){
+        $select = "{$this->migration->sessaoTable()} WHERE fk = :fk ORDER BY id DESC LIMIT 1";
+        $query = $this->db->getConnection()->prepare($select);
+        $query->bindParam(":fk", $fk);
+        $query->execute();
+        $data = array($query->rowCount(), $query->fetch(\PDO::FETCH_ASSOC));
+        return $data;
+    }
+
+    public function sessoesPaciente(int $fk){
+        $select = "{$this->migration->sessaoTable()} WHERE fk = :fk ORDER BY id DESC ";
+        $query = $this->db->getConnection()->prepare($select);
+        $query->bindParam(":fk", $fk);
+        $query->execute();
+        $data = array($query->rowCount(), $query->fetchAll());
+        return $data;
+    }
+
+    public function Sessao(int $id){
+        $select = "{$this->migration->sessaoTable()} WHERE id = :id ORDER BY id DESC ";
+        $query = $this->db->getConnection()->prepare($select);
+        $query->bindParam(":id", $id);
+        $query->execute();
+        $data = array($query->rowCount(), $query->fetch(\PDO::FETCH_ASSOC));
+        return $data;
+    }
+
+    public function SessaoPacienteDataAtual(int $fk, string $data){
+        $select = "{$this->migration->sessaoTable()} WHERE fk = :fk AND data = :data";
+        $query = $this->db->getConnection()->prepare($select);
+        $query->bindParam(":fk", $fk);
+        $query->bindParam(":data", $data);
+        $query->execute();
+        return $query->rowCount();
     }
 }

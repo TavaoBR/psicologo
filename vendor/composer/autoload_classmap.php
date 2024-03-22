@@ -64,6 +64,7 @@ return array(
     'Src\\Response\\Usuario\\Login' => $baseDir . '/Src/Response/Usuario/Login.php',
     'Src\\Response\\Usuario\\Temas' => $baseDir . '/Src/Response/Usuario/Temas.php',
     'Src\\Services\\Cpf' => $baseDir . '/Src/Services/Cpf.php',
+    'Src\\Services\\Datas' => $baseDir . '/Src/Services/Datas.php',
     'Src\\Services\\Mail' => $baseDir . '/Src/Services/Mail.php',
     'Src\\Services\\TokenUser' => $baseDir . '/Src/Services/TokenUser.php',
     'Src\\Services\\VariaveisForm' => $baseDir . '/Src/Services/VariaveisForm.php',

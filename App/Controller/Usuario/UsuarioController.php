@@ -21,6 +21,17 @@ class UsuarioController extends  TemplateConfig{
         include_once("App/Web/usuario/login.php");
    }
 
+   public function logout(){
+    session_destroy();
+    session_start();
+    unsetSession("id");
+    unsetSession("usuario");
+    unsetSession("token");
+    unsetSession("avatar");
+    setSession("Mensagem",sweetAlertSuccess("Deslogado com sucesso"));
+    redirect(routerConfig()."/login");
+   }
+
    public function perfil($data){
         session_start();
        if(is_numeric($data['data'])){

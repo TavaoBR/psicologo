@@ -29,6 +29,8 @@ $temaColor = configTemaColor();
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css' rel='stylesheet'>
    <!-- Template Main CSS File -->
     <title><?=$this->e($title)?></title>
 
@@ -49,7 +51,7 @@ $temaColor = configTemaColor();
 
     <div class="search-bar">
       <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="nome de usuario(exemplo: jamesgu14)" title="Enter search keyword">
+        <input type="text" name="query" placeholder="digite o cpf aqui" title="Enter search keyword">
         <button type="submit" title="Search"><i class="bx bx-search"></i></button>
       </form>
     </div><!-- End Search Bar -->
@@ -262,100 +264,49 @@ $temaColor = configTemaColor();
   <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
-
+<!-- End Dashboard Nav -->
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
-          <i class="bx bx-grid"></i>
-          <span>Dashboard</span>
-        </a>
-      </li><!-- End Dashboard Nav -->
-
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
-        <i class='bx bxs-home'></i>
-          <span>Home</span>
+        <a class="nav-link collapsed" href="<?=routerConfig()?>/perfil/<?=getSession('token')?>">
+        <i class='bx bxs-user-rectangle'></i>
+          <span><?=getSession('usuario')?></span>
         </a>
       </li>
       </li>
 
-
-
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#edit-user" data-bs-toggle="collapse" href="#">
-        <i class='bx bxs-cog' ></i><span>Perfil</span><i class="bx bx-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed" href="<?=routerConfig()?>/pacientes/cadastrar">
+        <i class='bx bxs-folder-plus'></i>
+          <span>Cadastrar Paciente</span>
         </a>
-        <ul id="edit-user" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="#">
-              <i class="bx bx-circle"></i><span>Alterar senha</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="bx bx-circle"></i><span>Alterar dados cadastrais</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="bx bx-circle"></i><span>Alterar Dados de login</span>
-            </a>
-          </li>
-
-        
-        </ul>
-      </li><!-- End Charts Nav -->
-
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#paciente" data-bs-toggle="collapse" href="#">
-        <i class='bx bxs-user-badge'></i><span>Paciente</span><i class="bx bx-chevron-down ms-auto"></i>
-        </a>
-        <ul id="paciente" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="<?=routerConfig()?>/pacientes/cadastrar">
-              <i class="bx bx-circle"></i><span>Cadastrar</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="bx bx-circle"></i><span>Pacientes</span>
-            </a>
-          </li>
-
-
-        </ul>
       </li>
 
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="<?=routerConfig()?>/pacientes">
+        <i class='bx bx-clipboard' ></i>
+          <span>Pacientes</span>
+        </a>
+      </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#suporte" data-bs-toggle="collapse" href="#">
-        <i class='bx bxs-comment-detail'></i><span>Suporte</span><i class="bx bx-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed" href="<?=routerConfig()?>/agenda">
+        <i class='bx bx-exit'></i>
+          <span>Agenda</span>
         </a>
-        <ul id="suporte" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          
-          <li>
-            <a href="charts-chartjs.html">
-              <i class="bx bx-circle"></i><span>Relatar problema</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="charts-apexcharts.html">
-              <i class="bx bx-circle"></i><span>Ajuda</span>
-            </a>
-          </li>
-
-        </ul>
-      </li><!-- End Charts Nav -->
-
+      </li>
+      </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
-         <i class='bx bxs-message-check'></i>
-          <span>Tire suas dúvidas</span>
+        <a class="nav-link collapsed" href="<?=routerConfig()?>/sair">
+        <i class='bx bx-exit'></i>
+          <span>Sair</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+      </li>
+      </li>
+
+      
+
+<!-- End Dashboard Nav -->
 
 
 
@@ -378,7 +329,9 @@ $temaColor = configTemaColor();
   <script src="<?=Libs("assets/vendor/simple-datatables/simple-datatables.js")?>"></script>
   <script src="<?=Libs("assets/vendor/tinymce/tinymce.min.js")?>"></script>
   <script src="<?=Libs("assets/vendor/php-email-form/validate.js")?>"></script>
-
+  <script src="<?=Libs("assets/js/index.global.min.js");?>"></script>
+  <script src="<?=Libs("assets/js/bootstrap5/index.global.min.js");?>"></script>
+    <script src="<?=Libs("assets/js/core/locales-all.global.min.js");?>"></script>
   <!-- Template Main JS File -->
   <script src="<?=Assests("assets/js/main.js")?>"></script>
 </body>

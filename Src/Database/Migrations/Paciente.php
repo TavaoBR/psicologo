@@ -22,6 +22,10 @@ class Paciente {
       return "{$this->variTable} anamnese";
     }
 
+    public function sessaoTable(){
+      return "{$this->variTable} sessao";
+    }
+
     
 
 

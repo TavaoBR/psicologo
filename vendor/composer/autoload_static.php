@@ -135,6 +135,7 @@ class ComposerStaticInit9fb37b34127adaa3c764954561afb8c8
         'Src\\Response\\Usuario\\Login' => __DIR__ . '/../..' . '/Src/Response/Usuario/Login.php',
         'Src\\Response\\Usuario\\Temas' => __DIR__ . '/../..' . '/Src/Response/Usuario/Temas.php',
         'Src\\Services\\Cpf' => __DIR__ . '/../..' . '/Src/Services/Cpf.php',
+        'Src\\Services\\Datas' => __DIR__ . '/../..' . '/Src/Services/Datas.php',
         'Src\\Services\\Mail' => __DIR__ . '/../..' . '/Src/Services/Mail.php',
         'Src\\Services\\TokenUser' => __DIR__ . '/../..' . '/Src/Services/TokenUser.php',
         'Src\\Services\\VariaveisForm' => __DIR__ . '/../..' . '/Src/Services/VariaveisForm.php',
