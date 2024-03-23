@@ -31,7 +31,7 @@ class Cadastrar extends VariaveisForm{
 
     public function result(){
         session_start();
-        if(!$this->inputsNull() && !$this->verificarAgenda() && !$this->verificaPacienteJaTemAgendaDataAtual()){
+        if(!$this->inputsNull() && !$this->verificarAgenda() && !$this->verificaPacienteJaTemAgendaDataAtual() && !$this->verificarData()){
            $this->create();
         }
     }
@@ -115,5 +115,22 @@ class Cadastrar extends VariaveisForm{
         }
     }
 
+
+    private function verificarData(){
+       $data = new \Src\Services\Datas;
+
+       $dataAtual = $data->dataAtual();
+
+       $timestampAtual = strtotime($dataAtual);
+       $timestampEscolhido = strtotime($this->data);
+
+       if( $timestampEscolhido <  $timestampAtual){
+          setSessions(["CadastrarAgenda"  => sweetAlertWarning("A data que você não pode ser menor que Data Atual: $dataAtual", "Alerta")]);
+          redirectBack();
+          return true;
+       }
+
+        return false;
+    }
   
 }
