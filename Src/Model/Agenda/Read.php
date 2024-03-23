@@ -15,4 +15,12 @@ class Read {
       $select = $this->select->agenda();
       return array($select[0], $select[1]);
     }
+
+    public function DataHoraInicioFinal(string $data, string $horaIncial, string $horaFinal){
+       return $this->select->DataHoraInicioFinal($data, $horaIncial, $horaFinal);
+    }
+
+    public function DataAgendaPaciente(int $fk, string $data){
+       return $this->select->DataAgendaPaciente($fk, $data);
+    }
 }

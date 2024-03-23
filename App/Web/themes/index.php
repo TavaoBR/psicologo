@@ -290,7 +290,7 @@ $temaColor = configTemaColor();
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="<?=routerConfig()?>/agenda">
-        <i class='bx bx-exit'></i>
+        <i class='bx bxs-calendar-star'></i>
           <span>Agenda</span>
         </a>
       </li>

@@ -117,3 +117,9 @@ function sweetAlertError(string $message){
   
   return $sweet;
 }
+
+
+function dataAtualFront(){
+    $data = new \Src\Services\Datas;
+    echo $data->dataAtual();
+}

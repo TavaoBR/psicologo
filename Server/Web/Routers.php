@@ -27,6 +27,7 @@ class Routers extends Start{
 
       $router->group("agenda")->namespace("App\Controller\Agenda");
       $router->get("/", "AgendaController:index");
+      $router->get("/agendar", "AgendaController:agendar");
       
       $router->group("agendaapi")->namespace("Src\Response\Agenda");
       $router->get("/", "Lista:getAll");
@@ -55,6 +56,9 @@ class Routers extends Start{
       $router->post("/cadastrar/anamnese/{id}", "CadastrarAnamnese:result");
       $router->post("/sessao/criar/{id}", "CriarSessao:result");
       $router->post("/sessao/iniciar/{id}", "FimSessao:result");
+
+      $router->group("agenda")->namespace("Src\Response\Agenda");
+      $router->post("/agendar", "Cadastrar:result");
 
       $router->group("oops")->namespace("App\Controllers\Error");
       $router->get("/{errocode}", "ErrorController:notFound");

@@ -26,10 +26,10 @@ class Lista {
 
            $eventos[] = [
              "id" => $row['id'],
-             "title" => $row['title'],
+             "title" => $row['paciente'],
              "color" => $color,
-             "start" => $row['start'],
-             "end" => $row['end'],
+             "start" => $row['dataInicio']." ".$row['horaInicio'],
+             "end" => $row['dataFim']." ".$row['horaFim'],
            ];
 
         }
