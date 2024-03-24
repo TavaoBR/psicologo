@@ -12,19 +12,19 @@ abstract class ConfigDatabase {
 
     protected function host()
     {
-        $host = "127.0.0.1";
+        $host = "localhost";
         return $host;
     }
 
     protected function user()
     {
-        $user = "workJames";
+        $user = "root";
         return $user;
     }
 
     protected function password()
     {
-        $password = "Gustavo1234%!";
+        $password = "";
         return $password;
     }
 
