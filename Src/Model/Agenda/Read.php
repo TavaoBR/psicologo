@@ -16,6 +16,11 @@ class Read {
       return array($select[0], $select[1]);
     }
 
+    public function getId(int $id){
+      $select = $this->select->id($id);
+      return array($select[0], $select[1]);
+    }
+
     public function DataHoraInicioFinal(string $data, string $horaIncial, string $horaFinal){
        return $this->select->DataHoraInicioFinal($data, $horaIncial, $horaFinal);
     }

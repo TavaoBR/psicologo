@@ -21,6 +21,15 @@ class Select {
         return $data;
     }
 
+    public function id(int $id){
+        $select = "{$this->migration->agendaTable()} WHERE id = :id";
+        $query = $this->db->getConnection()->prepare($select);
+        $query->bindParam(":id", $id);
+        $query->execute();
+        $data = array($query->rowCount(), $query->fetch(\PDO::FETCH_ASSOC));
+        return $data;
+    }
+
     public function DataHoraInicioFinal(string $data, string $horaIncial, string $horaFinal){
         $select = "{$this->migration->agendaTable()} WHERE dataInicio = :data AND horaInicio = :inicio AND horaFim = :final";
         $query = $this->db->getConnection()->prepare($select);

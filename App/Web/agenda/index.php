@@ -177,6 +177,22 @@ include_once("Public/assets/js/calender.php");
 </script>
 
 <script>
+              function ajustarHoraFinalEditada() {
+            var horaInicio = document.getElementById('horaConsulta').value;
+            var inicio = new Date('1970-01-01T' + horaInicio + ':00');
+            
+            // Adiciona +1 hora à hora inicial
+            inicio.setHours(inicio.getHours() + 1);
+            
+            // Formata a hora final no formato HH:MM
+            var horaFinal = ('0' + inicio.getHours()).slice(-2) + ':' + ('0' + inicio.getMinutes()).slice(-2);
+            
+            // Define o valor da hora final no campo de entrada
+            document.getElementById('FimConsulta').value = horaFinal;
+        }
+</script>
+
+<script>
     function bloquear(){
       var botao = document.getElementById("bloquearBotao");
       botao.disabled = true;
