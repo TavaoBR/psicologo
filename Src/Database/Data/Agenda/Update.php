@@ -13,7 +13,7 @@ class Update {
         $this->migration = new Agenda("UPDATE");
     }
 
-    public function remarcar(int $id, string $data, string $inicio, string $fim){
+    public function remarcarConsulta(int $id, string $data, string $inicio, string $fim){
         $update = "{$this->migration->agendaTable()} SET dataInicio = :dInicio, horaInicio = :hInicio, dataFim = :dFim, horaFim = :hFim WHERE id = :id";
         $query = $this->db->getConnection()->prepare($update);
         $query->bindParam(":id", $id);

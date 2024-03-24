@@ -59,7 +59,7 @@ class Routers extends Start{
 
       $router->group("agenda")->namespace("Src\Response\Agenda");
       $router->post("/agendar", "Cadastrar:result");
-      $router->post("/editar", "Editar:test");
+      $router->post("/editar", "Editar:result");
 
       $router->group("oops")->namespace("App\Controllers\Error");
       $router->get("/{errocode}", "ErrorController:notFound");
