@@ -83,4 +83,13 @@ class Select {
         $query->execute();
         return $query->rowCount();
     }
+
+    public function responsavlPaciente(int $fk){
+        $select = "{$this->migration->responsavelTable()} WHERE fk = :fk ORDER BY nome ASC";
+        $query = $this->db->getConnection()->prepare($select);
+        $query->bindParam(":fk", $fk);
+        $query->execute();
+        $data = array($query->rowCount(), $query->fetchAll());
+        return $data;
+    }
 }

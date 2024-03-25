@@ -50,4 +50,9 @@ class Read {
         $select = $this->select->SessaoPacienteDataAtual($fk, $data);
         return $select;
     }
+
+    public function responsavelPaciente(int $fk){
+      $select = $this->select->responsavlPaciente($fk);
+      return array($select[0], $select[1]);
+    }
 }

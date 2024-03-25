@@ -157,31 +157,7 @@ if($conta > 0):
 								<div class="card-body">
 									<h5 class="d-flex align-items-center mb-3">Dados Responsavel</h5>
                                     <div class="row">
-                                            <div class="col-sm-3 mb-3">
-                                                <p class="mb-0">Nome</p>
-                                            </div>
-                                            <div class="col-sm-9">
-                                                <p class=" mb-0">
-
-                                                </p>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <p class="mb-0">Grau Responsavel</p>
-                                            </div>
-                                            <div class="col-sm-9">
-                                                <p class=" mb-0">
-
-                                                </p>
-                                            </div>
-
-                                            <div class="col-sm-3 mb-3">
-                                                <p class="mb-0">Celular</p>
-                                            </div>
-                                            <div class="col-sm-9">
-                                                <p class=" mb-0">
-
-                                                </p>
-                                            </div>
+                                         <?=listResponsaveis($dados['id'])?>
                                     </div>
 								</div>
 							</div>
