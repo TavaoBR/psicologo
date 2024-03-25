@@ -39,7 +39,7 @@
 				<div class="success-inner">
 					<h1><i class="fa-solid fa-circle-check text-success"></i></i><h2>Sucesso!</h2></h1>
 					<h3>Ocorreu com exito a sua sessão com o paciente</h3>
-					<a href="#" class="btn btn-primary btn-lg">Pacientes</a>
+					<a href="<?=routerConfig()?>/pacientes" class="btn btn-primary btn-lg">Pacientes</a>
 				</div>
 				<!--/ End Error Inner -->
 			</div>

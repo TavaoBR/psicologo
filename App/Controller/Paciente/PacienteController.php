@@ -67,7 +67,7 @@ class PacienteController extends  TemplateConfig{
             $dados = $this->read->PacienteCpf($cpf);
         }
 
-        $this->view("paciente/perfil/index", ["title" => "Pacientes", "conta" => $dados[0], "dados" => $dados[1]]);
+        $this->view("paciente/perfil/index", ["title" => "Paciente", "conta" => $dados[0], "dados" => $dados[1]]);
 
     }
 

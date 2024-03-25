@@ -37,7 +37,7 @@
 				<div class="success-inner">
 					<h1><i class="fa-solid fa-triangle-exclamation text-danger"></i><h2>Error!</h2></h1>
 					<h3>Nenhum paciente foi encontrado ou registrado</h3>
-					<a href="<?=routerConfig()?>/psicologo/pacientes/cadastrar" class="btn btn-primary btn-lg">Cadastrar</a>
+					<a href="<?=routerConfig()?>/pacientes/cadastrar" class="btn btn-primary btn-lg">Cadastrar</a>
 				</div>
 				<!--/ End Error Inner -->
 			</div>

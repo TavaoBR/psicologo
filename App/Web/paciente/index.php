@@ -42,10 +42,7 @@
           Perfil
         </a>
         <a class="btn btn-primary btn-sm btn-rounded">
-          Criar Sessão
-        </a>
-        <a class="btn btn-primary btn-sm btn-rounded">
-          Sessões
+          Sessão
         </a>
       </td>
     </tr>
