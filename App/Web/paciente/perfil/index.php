@@ -193,7 +193,7 @@ if($conta > 0):
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Responsavel</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -225,13 +225,13 @@ if($conta > 0):
                 <input type="text" class="form-control" id="celular" name="celular" required>
              </div>
           </div>
-          
+            <button class="btn btn-primary" id="bloquearBotao" onclick="bloquear()">Cadastrar</button>
+          </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button class="btn btn-primary" id="bloquearBotao" onclick="bloquear()">Cadastrar</button>
       </div>
-      </form>
+      
     </div>
   </div>
 </div>
@@ -240,16 +240,28 @@ if($conta > 0):
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar Avatar</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <form action="<?=routerConfig()?>/pacientes/cadastrar/enviar/foto/avatar/<?=$dados['id']?>" method="POST" enctype="multipart/form-data">
       <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+        
+
+        <div class="row mb-3">
+             <label for="card_paciente" class="col-sm-2 col-form-label">Foto</label>
+             <div class="col-sm-10">
+                <input type="file" class="form-control" name="foto" accept="image/*" required>
+             </div>
+          </div>
+            
+        
+        </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <a href="<?=routerConfig()?>/pacientes/cadastrar/avatar/<?=$dados['id']?>" class="btn btn-danger">Tirar Foto</a>
+            <button  class="btn btn-primary" id="bloquearBotao2" onclick="bloquear2()">Cadastrar</button>
+          </div>
+        </form>
     </div>
   </div>
 </div>
@@ -257,6 +269,7 @@ if($conta > 0):
 <?=validateSession("CadastrarResponsavel")?>
 <?=validateSession("EditarResponsavel")?>
 <?=validateSession("EditarPaciente")?>
+<?=validateSession("enviarFoto")?>
 
 
 
@@ -265,6 +278,15 @@ if($conta > 0):
   
   function bloquear(){
       var botao = document.getElementById("bloquearBotao");
+      botao.disabled = true;
+      
+      setTimeout(function() {
+        botao.form.submit();
+      }, 100);
+    }
+
+    function bloquear2(){
+      var botao = document.getElementById("bloquearBotao2");
       botao.disabled = true;
       
       setTimeout(function() {

@@ -10,7 +10,8 @@
         "files": [
             "helpers/sessionsHelpers.php",
             "helpers/userHelpers.php",
-            "helpers/helpers.php"
+            "helpers/helpers.php",
+            "helpers/pacienteHelpers.php"
         ],
         "psr-4": {
             "Src\\": "Src/",

@@ -12,4 +12,5 @@ return array(
     '40a7870d0d546b26081e5c6052031651' => $baseDir . '/helpers/sessionsHelpers.php',
     'c1843bde4d8a2f52bee493123897219e' => $baseDir . '/helpers/userHelpers.php',
     '6e68b86dcdcd54c0148679e6866b1128' => $baseDir . '/helpers/helpers.php',
+    '85242a2c81209ba64416899b3a6bef26' => $baseDir . '/helpers/pacienteHelpers.php',
 );

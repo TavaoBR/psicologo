@@ -32,8 +32,34 @@ class Avatar extends VariaveisForm{
     }
 
     public function enviarFoto($data){
+       session_start();
        $id = $data['id'];
-       $file = $_FILES[''];
+       $file = $this->FILE('foto');
+
+       if($file['error']){
+        setSession("enviarFoto", sweetAlertWarning("Selecione a foto"));
+        redirectBack();
+       }
+
+       $foto = $file["tmp_name"];
+       $Fotoname = $file['name'];
+
+       $update = $this->update->attArquivoEnviadoAvatar($id, $Fotoname);
+
+       if($update > 0){
+            $_UP['pasta'] = 'Public/assets/img/paciente/'.$id.'/';
+            mkdir($_UP['pasta'], 0777);
+            move_uploaded_file($foto, $_UP['pasta'].$Fotoname);
+            redirectBack();
+        }else{
+            setSession("enviarFoto", sweetAlertError("Ocorreu um erro, tente novamente, caso persiste, entre em contato com o suporte"));
+            redirectBack();
+       }
+
+
+
+
+       
     }
 
 }

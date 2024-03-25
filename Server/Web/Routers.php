@@ -52,6 +52,7 @@ class Routers extends Start{
       $router->group("pacientes")->namespace("Src\Response\Paciente");
       $router->post("/cadastrar", "Cadastrar:data");
       $router->post("/cadastrar/tirar/foto/avatar/{id}","Avatar:tirarFoto");
+      $router->post("/cadastrar/enviar/foto/avatar/{id}","Avatar:enviarFoto");
       $router->post("/cadastrar/responsaveis/{id}", "CadastrarResponsavel:result");
       $router->post("/cadastrar/anamnese/{id}", "CadastrarAnamnese:result");
       $router->post("/sessao/criar/{id}", "CriarSessao:result");

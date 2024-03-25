@@ -21,6 +21,15 @@ class Update {
        $query->execute();
     }
 
+    public function Envioavatar(int $id, string $avatar){
+      $update = "{$this->migration->pacienteTable()} SET avatar = :avatar WHERE id = :id";
+      $query = $this->db->getConnection()->prepare($update);
+      $query->bindParam(":avatar", $avatar);
+      $query->bindParam(":id", $id);
+      $query->execute();
+      return $query->rowCount();
+   }
+
     public function atualizarSessao(int $id, string $anotacao, string $horaInicial, string $horaFinal, string $cronometro){
       $update = "{$this->migration->sessaoTable()} SET horaInicio = :inicio, horaFinal = :final, cronometro = :cronometro, anotacao = :anotacao WHERE id = :id";
       $query = $this->db->getConnection()->prepare($update);
