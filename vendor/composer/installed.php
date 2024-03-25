@@ -3,7 +3,7 @@
         'name' => 'gustavo/hands-on',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '0a9c69ebf529263a5f6550cd47f286c9252a368c',
+        'reference' => 'd40ac68e37a1b6e3d5b4c15f38cc8ea66d952af7',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'gustavo/hands-on' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '0a9c69ebf529263a5f6550cd47f286c9252a368c',
+            'reference' => 'd40ac68e37a1b6e3d5b4c15f38cc8ea66d952af7',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
