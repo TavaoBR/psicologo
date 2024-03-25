@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="<?=Assests("assets/css/form$temaColor.css")?>">
 
 <section>
-<div class="container">
+<div class="container-fluid">
 
 <h2 class="text-bold">Cadastro Ficha Anamnese</h2>
 

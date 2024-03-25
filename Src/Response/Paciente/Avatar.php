@@ -24,9 +24,9 @@ class Avatar extends VariaveisForm{
         $resultado = file_put_contents($_UP['pasta'].$imagemName,$binary_data);
 
         if($resultado){
-            echo "success";
+            echo json_encode("Avatar criado com sucesso") ;
        }else{
-           echo die('Could not save image! check file permission.');
+           echo json_encode("Erro ao criar avatar");
        }
         
     }

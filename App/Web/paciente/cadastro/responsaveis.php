@@ -15,7 +15,7 @@ if($temaColor == 'Dark'){
 <section>
    
 
-  <div class="container">
+  <div class="container-fluid">
 
   <h2> Cadastrar Responsavel </h2>
 <form action="<?=routerConfig()?>/pacientes/cadastrar/responsaveis/<?=$data['id']?>" method="post">
@@ -23,7 +23,7 @@ if($temaColor == 'Dark'){
       <div class="col-lg-4" >
         <div class="card mb-4" style="<?=$style?>">
           <div class="card-body text-center">
-            <h4> Avatar e Dados </h4>
+            <h4> Dados do paciente </h4>
             <img src="<?=routerConfig()?>/Public/assets/img/paciente/<?=$data['id']?>/<?=$data['avatar']?>" alt="avatar"
               class="rounded img-fluid" style="width: 225px;">
             <h5 class="my-3"><?=$data['nome']?></h5>
@@ -59,7 +59,7 @@ if($temaColor == 'Dark'){
               </div>
               <div class="col-sm-9">
                 <p class=" mb-0">
-                  <input type="text" class="form-control" id="nome" style="border:none" name="nome" required>
+                  <input type="text" class="form-control" id="nome" name="nome" required>
                 </p>
               </div>
             </div>
@@ -70,7 +70,7 @@ if($temaColor == 'Dark'){
               </div>
               <div class="col-sm-9">
                 <p class=" mb-0">
-                <input type="text" class="form-control border-0" id="celular" name="celular" required>
+                <input type="text" class="form-control" id="celular" name="celular" required>
                 </p>
               </div>
             </div>
