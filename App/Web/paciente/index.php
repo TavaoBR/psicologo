@@ -4,6 +4,7 @@
 <?php 
  if($conta > 0):
 ?>
+
 <h2 class="text-bold">Pacientes</h2>
 
 <table class="table align-middle mb-0 bg-white">

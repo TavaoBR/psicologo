@@ -70,7 +70,8 @@ class CadastrarResponsavel extends VariaveisForm{
     private function inserir(int $id){
 
        if($this->create->createResponsavel($id, $this->nome, $this->responsavel, $this->celular) > 0){
-          redirect(routerConfig()."/pacientes/cadastrar/anamnese/$id");  
+        setSession("CadastrarResponsavel", sweetAlertSuccess("Responsavel adicionado com sucesso"));  
+        redirectBack();  
        }else{
         setSession("CadastrarResponsavel", sweetAlertError("Erro ao cadastrar, tente novamente, caso erro persiste, entre em contato com o suporte")); 
         redirectBack();

@@ -243,7 +243,7 @@ class Cadastrar extends VariaveisForm{
         $read = new \Src\Model\Paciente\Read;
         $data = $read->PacienteCpf($this->cpf)[1];
         $id = $data['id'];
-        redirect(routerConfig()."/pacientes/cadastrar/avatar/$id");
+        redirect(routerConfig()."/pacientes/perfil/$id");
        }else{
         setSessions(["CadastroPaciente" => sweetAlertError("Não foi possivel cadastrar o paciente, entre em contato com o desenvolvedor"), 
         "cpf" => $this->cpf, "nome" => $this->nome, "data" => $this->dataNasc, "idade" => $this->idade, "email" => $this->email,
