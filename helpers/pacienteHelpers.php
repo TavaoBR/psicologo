@@ -1,3 +1,4 @@
+<?php
 function listResponsaveis(int $fk){
    $data = new \Src\Model\Paciente\Read;
 
