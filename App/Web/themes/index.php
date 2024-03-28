@@ -50,8 +50,8 @@ $temaColor = configTemaColor();
     </div><!-- End Logo -->
 
     <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="digite o cpf aqui" title="Enter search keyword">
+      <form class="search-form d-flex align-items-center" method="POST" action="<?=routerConfig()?>/pacientes/pesquisar">
+        <input type="text" name="cpf" placeholder="digite o cpf aqui" title="Enter search keyword">
         <button type="submit" title="Search"><i class="bx bx-search"></i></button>
       </form>
     </div><!-- End Search Bar -->
@@ -212,7 +212,7 @@ $temaColor = configTemaColor();
             <img src="<?=Assests("assets/img/perfil/").getSession("avatar")?>" alt="Profile" class="rounded-circle">
           </a><!-- End Profile Iamge Icon -->
 
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+          <!--<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
 
 
             <li>
@@ -252,7 +252,7 @@ $temaColor = configTemaColor();
               </a>
             </li>
 
-          </ul><!-- End Profile Dropdown Items -->
+          </ul>--><!-- End Profile Dropdown Items -->
         </li><!-- End Profile Nav -->
 
       </ul>
@@ -265,12 +265,21 @@ $temaColor = configTemaColor();
 
     <ul class="sidebar-nav" id="sidebar-nav">
 <!-- End Dashboard Nav -->
+
       <li class="nav-item">
-        <a class="nav-link collapsed" href="<?=routerConfig()?>/perfil/<?=getSession('token')?>">
-        <i class='bx bxs-user-rectangle'></i>
-          <span><?=getSession('usuario')?></span>
+        <a class="nav-link collapsed" data-bs-target="#edit-user" data-bs-toggle="collapse" href="#">
+        <i class='bx bxs-cog' ></i><span>Temas</span><i class="bx bx-chevron-down ms-auto"></i>
         </a>
-      </li>
+        <ul id="edit-user" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+           <li>
+              <select id="tema" class="form-control ">
+                   <option value="">Selecione um tema</option>
+                   <option value="White">Branco</option>
+                   <option value="Blue">Azul</option>
+                   <option value="Dark">Dark</option>
+                </select>
+           </li>
+        </ul>
       </li>
 
       <li class="nav-item">
@@ -320,6 +329,10 @@ $temaColor = configTemaColor();
   </main>
 
 
+  <?php 
+   validateSession("Pesquisar");
+  ?>
+
     <!-- Vendor JS Files -->
   <script src="<?=Libs("assets/vendor/apexcharts/apexcharts.min.js")?>"></script>
   <script src="<?=Libs("assets/vendor/bootstrap/js/bootstrap.bundle.min.js")?>"></script>
@@ -334,5 +347,36 @@ $temaColor = configTemaColor();
     <script src="<?=Libs("assets/js/core/locales-all.global.min.js");?>"></script>
   <!-- Template Main JS File -->
   <script src="<?=Assests("assets/js/main.js")?>"></script>
+  <script>
+const selectTema = document.getElementById('tema');
+
+selectTema.addEventListener('change', () => {
+  const temaSelecionado = selectTema.value;
+
+  // Mostra um Sweet Alert antes de enviar o tema
+  Swal.fire({
+    title: 'Aguarde',
+    text: `Estamos configurando o tema ${temaSelecionado}`,
+    allowOutsideClick: false,
+    showCancelButton: false,
+    showConfirmButton: false,
+    //timer: 30000,
+    didOpen: () => {
+      Swal.showLoading();
+      // Envia o valor do tema para o arquivo PHP via POST
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', "<?=routerConfig()?>/usuario/temas/<?=getSession("id")?>");
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.send(`tema=${temaSelecionado}`);
+
+      // Fecha o Sweet Alert após a requisição ser concluída
+      setTimeout(() => {
+      Swal.close();
+      location.reload();
+    }, 1000);
+    },
+  });
+});
+</script>
 </body>
 </html>

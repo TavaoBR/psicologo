@@ -48,9 +48,9 @@ if($conta > 0):
                                  ?>
                                 " alt="Admin" class="rounded-circle p-1 " width="110">
 								<div class="mt-3">
-									<h4><?=$dados['nome']?></h4>
-									<p class="<?=$text?> mb-1"><?=$dados['idade']?> anos</p>
-									<p class="<?=$text?> font-size-sm"><?=$dados['endereco']?></p>
+                                    <h4><?=$dados['nome']?></h4>
+                                    <p class="<?=$text?> mb-1"><?=$dados['idade']?> anos</p>
+                                    <p class="<?=$text?> font-size-sm"><?=$dados['endereco']?></p>
                                     <p>
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                         <i class="fa-solid fa-user-plus"></i>
@@ -58,6 +58,13 @@ if($conta > 0):
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                                         <i class="fa-solid fa-camera-retro"></i>
                                     </button>
+                                    <?=fichaAnamnese($dados['id'])?>
+                                    <a href="<?=routerConfig()?>/pacientes/sessao/criar/<?=$dados['id']?>" target="_blank" class="btn btn-primary btn-sm btn-rounded">
+                                      Criar Sessão
+                                    </a>
+                                    <a href="<?=routerConfig()?>/pacientes/sessoes/<?=$dados['id']?>" target="_blank" class="btn btn-primary btn-sm btn-rounded">
+                                      Sessões
+                                    </a>
                                     </p>
 								</div>
 							</div>
@@ -66,110 +73,115 @@ if($conta > 0):
 				</div>
 				<div class="col-lg-8">
 					<div class="card" style="<?=$style?>">
-						<div class="card-body">
-                        <h5 class="d-flex text-center mb-3">Dados Paciente</h5>
-                        
-                        <div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Nome</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="<?=$dados['nome']?>">
-								</div>
-							</div>
-                            
-							<div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Cpf</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="<?=$dados['cpf']?>">
-								</div>
-							</div>
-                            
-							<div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Data Nascimento</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="date" value="<?=$dados['dataNasc']?>" class="form-control" >
-								</div>
-							</div>
-                            
-							<div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Idade</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="<?=$dados['idade']?>">
-								</div>
-							</div>
-                            
-							<div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Celular</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="celular" class="form-control" value="<?=$dados['celular']?>">
-								</div>
-							</div>
-                            
-                            <div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">E-mail</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="email" class="form-control" value="<?=$dados['email']?>">
-								</div>
-							</div>
-                            
-							<div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">CEP</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="<?=$dados['cep']?>">
-								</div>
-							</div>
-                            <div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Estado</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="<?=$dados['estado']?>">
-								</div>
-							</div>
-                            <div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Cidade</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="<?=$dados['cidade']?>">
-								</div>
-							</div>
-                            <div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Bairro</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="<?=$dados['bairro']?>">
-								</div>
-							</div>
-                            <div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Endereço</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="<?=$dados['endereco']?>">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-3"></div>
-								<div class="text-secondary">
-									<button type="button" class="btn btn-primary px-4" >Salvar</button>
-								</div>
-							</div>
-						</div>
+					<form action="<?=routerConfig()?>/pacientes/editar/<?=$dados['id']?>" method="POST">
+
+          	
+              <div class="card-body">
+                          <h5 class="d-flex text-center mb-3">Dados Paciente</h5>
+                
+                          
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Nome</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input type="text" name="nome" class="form-control" value="<?=$dados['nome']?>">
+                  </div>
+                </div>
+                              
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Cpf</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input type="text" id="cpf" name="cpf" class="form-control" value="<?=$dados['cpf']?>">
+                  </div>
+                </div>
+                              
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Data Nascimento</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input type="date" name="dataNasc" id="dataNascimento" value="<?=$dados['dataNasc']?>" class="form-control" >
+                  </div>
+                </div>
+                              
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Idade</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input type="text" id="idade" name="idade" class="form-control" value="<?=$dados['idade']?>">
+                  </div>
+                </div>
+                              
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Celular</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input type="celular" name="celular" id="celular" class="form-control" value="<?=$dados['celular']?>">
+                  </div>
+                </div>
+                              
+                              <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">E-mail</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input type="email" name="email" class="form-control" value="<?=$dados['email']?>">
+                  </div>
+                </div>
+                              
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">CEP</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input type="text" name="cep" id="cep" class="form-control" value="<?=$dados['cep']?>">
+                  </div>
+                </div>
+                              <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Estado</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input type="text" name="uf" id="uf" class="form-control" value="<?=$dados['estado']?>">
+                  </div>
+                </div>
+                  <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Cidade</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input type="text" name="cidade" id="cidade" class="form-control" value="<?=$dados['cidade']?>">
+                  </div>
+                </div>
+                              <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Bairro</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input type="text" name="bairro" id="bairro" class="form-control" value="<?=$dados['bairro']?>">
+                  </div>
+                </div>
+                              <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Endereço</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input type="text" name="endereco" id="endereco" class="form-control" value="<?=$dados['endereco']?>">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3"></div>
+                  <div class="text-secondary">
+                    <button  class="btn btn-primary px-4" id="BloquearEditarPaciente" onclick="BloquearEditarPaciente()">Salvar</button>
+                  </div>
+                </div>
+              </div>
+            </form>
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
@@ -275,6 +287,37 @@ if($conta > 0):
 
 <script>
      $('#celular').mask("(99) 9 9999-9999");
+     $('#cpf').mask("999.999.999-99");
+     $('#cep').mask("99999-999");
+
+     $(document).ready(function () {
+            $("#cep").blur(function () {
+                const cep = $(this).val().replace(/\D/g, ''); // Remove caracteres não numéricos
+
+                if (cep.length !== 8) {
+                    alert("CEP inválido. Certifique-se de inserir 8 números.");
+                    return;
+                }
+
+                $.get(`https://viacep.com.br/ws/${cep}/json/`, function (data) {
+                    $("#endereco").val(data.logradouro);
+                    $("#bairro").val(data.bairro);
+                    $("#cidade").val(data.localidade);
+                    $("#uf").val(data.uf);
+                })
+                .fail(function () {
+                    console.error("Erro ao buscar CEP.");
+                });
+            });
+        });
+
+        document.getElementById('dataNascimento').addEventListener('change', function (){
+        let dataNascimento = new Date(this.value)
+        let dataAtual = new Date()
+        let diferenca = dataAtual - dataNascimento
+        let idade = Math.floor(diferenca / (1000 * 60 * 60 * 24 * 365.25))
+        document.getElementById('idade').value = idade
+    })
   
   function bloquear(){
       var botao = document.getElementById("bloquearBotao");
@@ -287,6 +330,15 @@ if($conta > 0):
 
     function bloquear2(){
       var botao = document.getElementById("bloquearBotao2");
+      botao.disabled = true;
+      
+      setTimeout(function() {
+        botao.form.submit();
+      }, 100);
+    }
+
+    function BloquearEditarPaciente(){
+      var botao = document.getElementById("BloquearEditarPaciente");
       botao.disabled = true;
       
       setTimeout(function() {

@@ -12,7 +12,7 @@ abstract class ConfigDatabase {
 
     protected function host()
     {
-        $host = "localhost";
+        $host = "127.0.0.1";
         return $host;
     }
 

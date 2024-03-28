@@ -138,7 +138,7 @@
                     $('#photoModal').modal('hide');
 
 					alert(data);
-                    location.href= "<?=routerConfig()?>/pacientes/cadastrar/responsaveis/<?=$id?>";
+                    location.href= "<?=routerConfig()?>/pacientes/perfil/<?=$id?>";
                 
             }
         })

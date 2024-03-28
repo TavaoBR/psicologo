@@ -43,22 +43,6 @@ if($dados['tema'] == 'Dark'){
                    <option value="Dark">Dark</option>
                 </select></p>
               </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3" style="<?=$style?>">
-                <i class="fab fa-github fa-lg <?=$text?>" ></i>
-                <p class="mb-0">mdbootstrap</p>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3" style="<?=$style?>">
-                <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
-                <p class="mb-0">@mdbootstrap</p>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3" style="<?=$style?>">
-                <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
-                <p class="mb-0">mdbootstrap</p>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3" style="<?=$style?>">
-                <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
-                <p class="mb-0">mdbootstrap</p>
-              </li>
             </ul>
           </div>
         </div>
@@ -146,40 +130,6 @@ if($dados['tema'] == 'Dark'){
               </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="card mb-4 mb-md-0" style="<?=$style?>">
-              <div class="card-body">
-                <p class="mb-4"><span class="<?=$text?> font-italic me-1">Hard Skills</span>
-                </p>
-                <p class="mb-1" style="font-size: .77rem;">PHP</p>
-                <div class="progress rounded" style="height: 15px;">
-                  <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="80"
-                    aria-valuemin="0" aria-valuemax="100">100%</div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">JavaScript</p>
-                <div class="progress rounded" style="height: 15px;">
-                  <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="72"
-                    aria-valuemin="0" aria-valuemax="100">80%</div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">Nodejs/Nextjs/TypeScript</p>
-                <div class="progress rounded" style="height: 15px;">
-                  <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="89"
-                    aria-valuemin="0" aria-valuemax="100">70%</div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">Html</p>
-                <div class="progress rounded" style="height: 15px;">
-                  <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="55"
-                    aria-valuemin="0" aria-valuemax="100">90%</div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">Css</p>
-                <div class="progress rounded mb-2" style="height: 15px;">
-                  <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="66"
-                    aria-valuemin="0" aria-valuemax="100">80%</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>

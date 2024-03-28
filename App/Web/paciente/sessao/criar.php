@@ -1,5 +1,20 @@
 <?=$this->layout('themes/index', ['title' => $title]);?>
 
+<?php
+if($conta > 0):
+ 
+?>
+
+<?php 
+ if($dataAtual == $data['data']):
+?>
+
+<h2 class="">Paciente já teve uma sessão hoje</h2>
+
+<?php 
+ else:
+?>
+
 <h2 class="text-bold">Criar Sessão</h2>
 
 <div class="container">
@@ -20,3 +35,22 @@
       }, 100);
     }
 </script>
+
+<?php 
+ endif;
+?>
+
+
+
+<?php 
+else:
+?>
+
+<?php 
+ include_once("App/Web/paciente/notfound/404.php");
+?>
+
+<?php 
+endif;
+?>
+

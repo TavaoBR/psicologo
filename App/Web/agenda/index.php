@@ -88,7 +88,7 @@ include_once("Public/assets/js/calender.php");
           <div class="row mb-3">
              <div class="col-sm-10">
              <button type="button" id="btnCancelar" class="btn btn-danger">Cancelar</button> 
-             <button type="submit" id="bloquearBotao" onclick="bloquear()" class="btn btn-primary">Salvar</button> 
+             <button type="submit" class="btn btn-primary">Salvar</button> 
              </div>
           </div>
 

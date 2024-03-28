@@ -92,4 +92,5 @@ class Select {
         $data = array($query->rowCount(), $query->fetchAll());
         return $data;
     }
+    
 }

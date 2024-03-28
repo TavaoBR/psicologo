@@ -28,6 +28,10 @@ class Editar extends VariaveisForm{
 
     public function result(){
          session_start();
+
+         if(!$this->verificarData()){
+            $this->verificarDataDiferente();
+         }
     }
 
     private function pegarDadosAgenda(){
@@ -40,21 +44,31 @@ class Editar extends VariaveisForm{
         $read = $this->read->DataHoraInicioFinal($this->data, $this->inicio, $this->final);
         if($read > 0){
             setSessions(["CadastrarAgenda"  => sweetAlertWarning("Já existe paciente agendado. Data: $this->data, inicio: $this->inicio e final: $this->final", "Alerta")]);  
+            redirectBack();
             return true;
           } 
-  
+
+          $this->reagendar();
           return false;
     }
 
     private function verificarDataDiferente(){
         $dados = $this->pegarDadosAgenda();
         $dataAtual = $dados['dataInicio'];
+        $horaIAtual = $dados['dataInicio'];
         
         if($dataAtual != $this->data){
           $this->verificaPacienteJaTemAgendaNaData();
           return true;
         }
 
+        if($horaIAtual == $this->data){
+           setSession("CadastrarAgenda", sweetAlertWarning("Escolha uma data ou hora diferente para fazer o reagedamento", "Alerta"));
+           redirectBack();
+           return true;
+        }
+
+        $this->verificarAgenda();
         return false;
 
     }
@@ -71,11 +85,24 @@ class Editar extends VariaveisForm{
             return true;
           }
     
+          $this->reagendar();
           return false;
     }
 
-    private function update(){
+    private function reagendar(){
+        $remarcar = $this->update->remarcar($this->id, $this->data, $this->inicio, $this->final);
+        $dados = $this->pegarDadosAgenda();
+        $nome = $dados['paciente'];
 
+        if($remarcar > 0){
+           echo "Sucesso";
+          setSession("CadastrarAgenda", sweetAlertSuccess("Consulta Paciente $nome reagendada com sucesso para dia {$this->data} às {$this->inicio}"));
+          redirectBack();
+        }else{
+         echo "Erro"; 
+         setSession("CadastrarAgenda", sweetAlertError("Tente novamente, caso persista entre com o suporte"));
+         redirectBack();
+        }
     }
 
 

@@ -42,8 +42,11 @@
         <a href="<?=routerConfig()?>/pacientes/perfil/<?=$data['id']?>" class="btn btn-primary btn-sm btn-rounded">
           Perfil
         </a>
-        <a class="btn btn-primary btn-sm btn-rounded">
-          Sessão
+        <a href="<?=routerConfig()?>/pacientes/sessao/criar/<?=$data['id']?>" class="btn btn-primary btn-sm btn-rounded">
+         Criar Sessão
+        </a>
+        <a href="<?=routerConfig()?>/pacientes/sessoes/<?=$data['id']?>" class="btn btn-primary btn-sm btn-rounded">
+          Sessões
         </a>
       </td>
     </tr>

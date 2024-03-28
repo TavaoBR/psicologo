@@ -24,6 +24,7 @@ class Routers extends Start{
       $router->get("/sessao/criar/{id}", "PacienteController:criarSessao");
       $router->get("/sessao/iniciar/{id}", "PacienteController:sessaoStart");
       $router->get("/sessao/sucesso", "PacienteController:sessaoSucess");
+      $router->get("/sessoes/{id}", "PacienteController:pacienteSessoes");
 
       $router->group("agenda")->namespace("App\Controller\Agenda");
       $router->get("/", "AgendaController:index");
@@ -57,6 +58,8 @@ class Routers extends Start{
       $router->post("/cadastrar/anamnese/{id}", "CadastrarAnamnese:result");
       $router->post("/sessao/criar/{id}", "CriarSessao:result");
       $router->post("/sessao/iniciar/{id}", "FimSessao:result");
+      $router->post("/editar/{id}", "EditarPaciente:result");
+      $router->post("/pesquisar", "Pesquisar:result");
 
       $router->group("agenda")->namespace("Src\Response\Agenda");
       $router->post("/agendar", "Cadastrar:result");
