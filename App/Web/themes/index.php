@@ -42,7 +42,7 @@ $temaColor = configTemaColor();
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="<?=routerConfig()?>/pacientes" class="logo d-flex align-items-center">
         <img src="" alt="">
         <span class="d-none d-lg-block">Projeto Psicologo</span>
       </a>
@@ -51,7 +51,7 @@ $temaColor = configTemaColor();
 
     <div class="search-bar">
       <form class="search-form d-flex align-items-center" method="POST" action="<?=routerConfig()?>/pacientes/pesquisar">
-        <input type="text" name="cpf" placeholder="digite o cpf aqui" title="Enter search keyword">
+        <input type="text" name="cpf" placeholder="CPF" title="Enter search keyword">
         <button type="submit" title="Search"><i class="bx bx-search"></i></button>
       </form>
     </div><!-- End Search Bar -->

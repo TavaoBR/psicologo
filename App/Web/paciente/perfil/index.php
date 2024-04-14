@@ -47,15 +47,15 @@ if($conta > 0):
                                   endif;
                                  ?>
                                 " alt="Admin" class="rounded-circle p-1 " width="110">
-								<div class="mt-3">
+								                  <div class="mt-3">
                                     <h4><?=$dados['nome']?></h4>
                                     <p class="<?=$text?> mb-1"><?=$dados['idade']?> anos</p>
                                     <p class="<?=$text?> font-size-sm"><?=$dados['endereco']?></p>
                                     <p>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <button type="button" class="btn btn-primary" title="Cadastrar Responsavel" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                         <i class="fa-solid fa-user-plus"></i>
                                     </button>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                    <button type="button" class="btn btn-primary" title="Enviar ou Tirar Foto" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                                         <i class="fa-solid fa-camera-retro"></i>
                                     </button>
                                     <?=fichaAnamnese($dados['id'])?>

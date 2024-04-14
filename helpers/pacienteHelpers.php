@@ -58,8 +58,8 @@ function fichaAnamnese(int $fk){
         $ficha = $data->fichaAnamnese($fk)[1];
       
         $html .= "
-        <button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#fichaAnamnese'>
-            Anamnese
+        <button type='button' class='btn btn-primary' title='Visualizar Anamnese' data-bs-toggle='modal' data-bs-target='#fichaAnamnese'>
+            <i class='fa-solid fa-clipboard-check'></i>
         </button>
 
             <div class='modal fade' id='fichaAnamnese' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
@@ -98,7 +98,7 @@ function fichaAnamnese(int $fk){
         
     }else{
         $html .= "
-            <a href='$rota/pacientes/cadastrar/anamnese/$fk' class='btn btn-primary'>Anamnese</a>
+            <a href='$rota/pacientes/cadastrar/anamnese/$fk' title='Preencher Anamnese' class='btn btn-primary'><i class='fa-solid fa-clipboard-question'></i></a>
         ";
     }
 
