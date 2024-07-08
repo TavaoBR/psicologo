@@ -11,7 +11,7 @@
 
     <?=validateSession("CadastroAnamnese")?>
 
-    <form  action="<?=routerConfig()?>/pacientes/cadastrar/anamnese/<?=$data['id']?>" method="POST"> 
+    <form  action="<?=routerConfig()?>/pacientes/cadastrar/anamnese/<?=$data->id?>" method="POST"> 
         <div class="col-xl-12">
 
             <div class="card">

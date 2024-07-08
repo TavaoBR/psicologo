@@ -9,7 +9,7 @@ class Insert {
     private $migration;
 
     public function __construct(){
-        $this->db = new Database;
+        $this->db = Database::connect();
         $this->migration = new Usuario("SELECT * FROM");
     }
 }

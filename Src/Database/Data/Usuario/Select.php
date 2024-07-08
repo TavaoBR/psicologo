@@ -10,13 +10,13 @@ class Select {
     private $migration;
 
     public function __construct(){
-        $this->db = new Database;
+        $this->db = Database::connect();
         $this->migration = new Usuario("SELECT * FROM");
     }
 
     public function usuario(string $user){
        $select = "{$this->migration->userTable()} WHERE usuario = :usuario";
-       $query = $this->db->getConnection()->prepare($select);
+       $query = $this->db->prepare($select);
        $query->bindParam(":usuario", $user);
        $query->execute();
        $data = array($query->rowCount(), $query->fetch(\PDO::FETCH_ASSOC));
@@ -25,7 +25,7 @@ class Select {
     
     public function userToken(string $token){
         $select = "{$this->migration->userTable()} WHERE token = :token";
-        $query = $this->db->getConnection()->prepare($select);
+        $query = $this->db->prepare($select);
         $query->bindParam(":token", $token);
         $query->execute();
         $data = array($query->rowCount(), $query->fetch(\PDO::FETCH_ASSOC));
@@ -34,7 +34,7 @@ class Select {
 
     public function userId(int $id){
         $select = "{$this->migration->userTable()} WHERE id = :id";
-        $query = $this->db->getConnection()->prepare($select);
+        $query = $this->db->prepare($select);
         $query->bindParam(":id", $id);
         $query->execute();
         $data = array($query->rowCount(), $query->fetch(\PDO::FETCH_ASSOC));

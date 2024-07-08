@@ -9,21 +9,21 @@ class Select {
     private $migration;
 
     public function __construct(){
-        $this->db = new Database;
+        $this->db = Database::connect();
         $this->migration = new Agenda("SELECT * FROM");
     }
 
     public function agenda(){
         $select = "{$this->migration->agendaTable()}";
-        $query = $this->db->getConnection()->prepare($select);
+        $query = $this->db->prepare($select);
         $query->execute();
-        $data = array($query->rowCount(), $query->fetchAll());
+        $data = array($query->rowCount(), $query->fetchAll(\PDO::FETCH_ASSOC));
         return $data;
     }
 
     public function id(int $id){
         $select = "{$this->migration->agendaTable()} WHERE id = :id";
-        $query = $this->db->getConnection()->prepare($select);
+        $query = $this->db->prepare($select);
         $query->bindParam(":id", $id);
         $query->execute();
         $data = array($query->rowCount(), $query->fetch(\PDO::FETCH_ASSOC));
@@ -32,7 +32,7 @@ class Select {
 
     public function DataHoraInicioFinal(string $data, string $horaIncial, string $horaFinal){
         $select = "{$this->migration->agendaTable()} WHERE dataInicio = :data AND horaInicio = :inicio AND horaFim = :final";
-        $query = $this->db->getConnection()->prepare($select);
+        $query = $this->db->prepare($select);
         $query->bindParam(":data", $data);
         $query->bindParam(":inicio", $horaIncial);
         $query->bindParam(":final", $horaFinal);
@@ -42,7 +42,7 @@ class Select {
 
     public function DataAgendaPaciente(int $fk, string $data){
         $select = "{$this->migration->agendaTable()} WHERE dataInicio = :data AND fk = :fk";
-        $query = $this->db->getConnection()->prepare($select);
+        $query = $this->db->prepare($select);
         $query->bindParam(":data", $data);
         $query->bindParam(":fk", $fk);
         $query->execute();

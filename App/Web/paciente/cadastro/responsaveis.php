@@ -18,16 +18,16 @@ if($temaColor == 'Dark'){
   <div class="container-fluid">
 
   <h2> Cadastrar Responsavel </h2>
-<form action="<?=routerConfig()?>/pacientes/cadastrar/responsaveis/<?=$data['id']?>" method="post">
+<form action="<?=routerConfig()?>/pacientes/cadastrar/responsaveis/<?=$data->id?>" method="post">
     <div class="row">
       <div class="col-lg-4" >
         <div class="card mb-4" style="<?=$style?>">
           <div class="card-body text-center">
             <h4> Dados do paciente </h4>
-            <img src="<?=routerConfig()?>/Public/assets/img/paciente/<?=$data['id']?>/<?=$data['avatar']?>" alt="avatar"
+            <img src="<?=routerConfig()?>/Public/assets/img/paciente/<?=$data->id?>/<?=$data->avatar?>" alt="avatar"
               class="rounded img-fluid" style="width: 225px;">
-            <h5 class="my-3"><?=$data['nome']?></h5>
-            <p class=" mb-1"><?=$data['email']?></p>
+            <h5 class="my-3"><?=$data->nome?></h5>
+            <p class=" mb-1"><?=$data->email?></p>
               
           </div>
         </div>

@@ -3,25 +3,33 @@
 namespace Src\Database\Config;
 
 use PDO;
-use PDOException;
 
-class Database extends ConfigDatabase{
+class Database{
  
-    protected $connection;
+    private static $host = '193.203.175.94';
 
-    public function __construct()
-    {
-        try {
-            $this->connection = new PDO("{$this->db()}:host={$this->host()};port={$this->port()};dbname={$this->dbname()}", $this->user(), $this->password());
-            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            echo $e->getMessage();
+    private static $db = 'mysql';
+
+    private static $dbname = 'u736474566_TdataPsicologo';
+
+    private static $user = 'u736474566_TdataPsicologo';
+
+    private static $password = 'Guga@258%!';
+
+    private static $port = 3306;
+
+     private static $connection = null;
+
+     public static function connect(){
+
+        if(!self::$connection){
+            self::$connection = new PDO(self::$db.":host=".self::$host.";port=".self::$port.";dbname=".self::$dbname, self::$user, self::$password, [
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ
+            ]);
         }
-    }
 
-    public function getConnection()
-    {
-        return $this->connection;
-    }
+        return self::$connection;
+
+     }
     
 }

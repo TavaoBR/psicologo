@@ -9,7 +9,7 @@ class Insert{
     private $migration;
 
     public function __construct(){
-        $this->db = new Database;
+        $this->db = Database::connect();
         $this->migration = new Paciente("INSERT INTO");
     }
 
@@ -17,7 +17,7 @@ class Insert{
           
           $insert = "{$this->migration->pacienteTable()} (cpf, nome, dataNasc, idade, cep, estado, cidade, bairro, endereco, celular, email) 
           VALUES (:cpf, :nome, :data, :idade, :cep, :estado, :cidade, :bairro, :endereco, :celular, :email)";
-          $query = $this->db->getConnection()->prepare($insert);
+          $query = $this->db->prepare($insert);
           $query->bindParam(":cpf", $cpf);
           $query->bindParam(":nome", $nome);
           $query->bindParam(":data", $data);
@@ -38,7 +38,7 @@ class Insert{
        
        $insert = "{$this->migration->responsavelTable()} (fk, responsavel, nome, celular) 
        VALUES (:fk, :responsavel, :nome, :celular)";
-       $query = $this->db->getConnection()->prepare($insert);
+       $query = $this->db->prepare($insert);
        $query->bindParam(":fk", $id);
        $query->bindParam(":responsavel", $responsavel);
        $query->bindParam(":nome", $nome);
@@ -50,7 +50,7 @@ class Insert{
     public function inserirAnamnese(int $id, string $motivo, string $historico, string $impacto, string $infancia, string $expectativas){
       $insert = "{$this->migration->anamneseTable()} (fk, motivo, historico, impacto, infancia, expectativas) 
       VALUES (:fk, :motivo, :historico ,:impacto, :infancia, :expectativas)";
-      $query = $this->db->getConnection()->prepare($insert);
+      $query = $this->db->prepare($insert);
       $query->bindParam(":fk", $id);
       $query->bindParam(":motivo", $motivo);
       $query->bindParam(":historico", $historico);
@@ -64,7 +64,7 @@ class Insert{
     public function inserirSessao(int $fk, string $data){
        $insert = "{$this->migration->sessaoTable()} (fk, data) 
        VALUES(:fk, :data)";
-       $query = $this->db->getConnection()->prepare($insert);
+       $query = $this->db->prepare($insert);
        $query->bindParam(":fk", $fk);
        $query->bindParam(":data", $data);
        $query->execute();

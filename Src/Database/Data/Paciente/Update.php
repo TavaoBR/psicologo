@@ -9,13 +9,13 @@ class Update {
     private $migration;
 
     public function __construct(){
-        $this->db = new Database;
+        $this->db = Database::connect();
         $this->migration = new Paciente("UPDATE");
     }
 
     public function avatar(int $id, string $avatar):void{
        $update = "{$this->migration->pacienteTable()} SET avatar = :avatar WHERE id = :id";
-       $query = $this->db->getConnection()->prepare($update);
+       $query = $this->db->prepare($update);
        $query->bindParam(":avatar", $avatar);
        $query->bindParam(":id", $id);
        $query->execute();
@@ -23,7 +23,7 @@ class Update {
 
     public function Envioavatar(int $id, string $avatar){
       $update = "{$this->migration->pacienteTable()} SET avatar = :avatar WHERE id = :id";
-      $query = $this->db->getConnection()->prepare($update);
+      $query = $this->db->prepare($update);
       $query->bindParam(":avatar", $avatar);
       $query->bindParam(":id", $id);
       $query->execute();
@@ -32,7 +32,7 @@ class Update {
 
     public function atualizarSessao(int $id, string $anotacao, string $horaInicial, string $horaFinal, string $cronometro){
       $update = "{$this->migration->sessaoTable()} SET horaInicio = :inicio, horaFinal = :final, cronometro = :cronometro, anotacao = :anotacao WHERE id = :id";
-      $query = $this->db->getConnection()->prepare($update);
+      $query = $this->db->prepare($update);
       $query->bindParam(":id", $id);
       $query->bindParam(":inicio", $horaInicial);
       $query->bindParam(":final", $horaFinal);
@@ -44,7 +44,7 @@ class Update {
 
     public function atualizarPaciente(int $id, string $cpf, string $nome, string $data, string $idade, string $cep, string $uf, string $cidade, string $bairro, string $endereco, string $celular, string $email){
           $update = "{$this->migration->pacienteTable()} SET cpf = :cpf, nome = :nome, dataNasc = :data, idade = :idade, cep = :cep, estado = :estado, cidade = :cidade, bairro = :bairro, endereco = :endereco, celular = :celular, email = :email WHERE id = :id";
-          $query = $this->db->getConnection()->prepare($update);
+          $query = $this->db->prepare($update);
           $query->bindParam(":id", $id);
           $query->bindParam(":cpf", $cpf);
           $query->bindParam(":nome", $nome);
